@@ -7,6 +7,8 @@
 //
 
 #import "DWMenuViewController.h"
+#import "DWInitialViewController.h"
+#import "DWContentViewController.h"
 #import "DWMenuView.h"
 #import "DWMenuItem.h"
 #import "UIColor+ColourTheme.h"
@@ -21,8 +23,10 @@
 
 @end
 
+
 @implementation DWMenuViewController
 
+@synthesize stuffController;
 
 - (void)viewDidLoad
 {
@@ -33,7 +37,13 @@
     
     
     // Draw the main menu - the parent menu
-    tableMainMenu = [[DWMenuView alloc] initWithFrame:[self.entireContiner frame]];
+    
+    CGRect frame = CGRectMake(self.view.bounds.origin.x,
+                              self.view.bounds.origin.y,
+                              self.view.bounds.size.width * 0.8,
+                              self.view.bounds.size.height);
+    
+    tableMainMenu = [[DWMenuView alloc] initWithFrame:frame];
     [tableMainMenu setDelegate:self];
     [menuStack addObject:tableMainMenu];
     [self.entireContiner addSubview:tableMainMenu];
@@ -209,6 +219,9 @@
     UITableViewCell * selectedCell = [tableView cellForRowAtIndexPath:indexPath];
     [self resetCellColours:tableView];
     [selectedCell setBackgroundColor:[UIColor DWMenuLineColour]];
+    
+    [self.stuffController  openMenuForItem:[selectedCell.textLabel text]];
+    
 }
 
 #pragma mark -

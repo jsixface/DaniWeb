@@ -31,7 +31,47 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="219" y="79"/>
+            <point key="canvasLocation" x="183" y="79"/>
+        </scene>
+        <!--Content View Controller-->
+        <scene sceneID="OGZ-Tb-xv1">
+            <objects>
+                <viewController storyboardIdentifier="ContentView" id="pZN-8S-Pco" customClass="DWContentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AiD-02-M3q"/>
+                        <viewControllerLayoutGuide type="bottom" id="37b-dY-SaL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BIq-No-kcq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cCR-uU-cX0">
+                                <rect key="frame" x="66" y="56" width="216" height="73"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="jCj-uI-Kfm" appends="YES" id="X37-kR-lOg"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="lblTitle" destination="cCR-uU-cX0" id="jP1-0X-hjS"/>
+                        <outlet property="panGesture" destination="jCj-uI-Kfm" id="n71-Xv-5YC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lM7-n7-IXn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="jCj-uI-Kfm">
+                    <connections>
+                        <action selector="contentPanned:" destination="pZN-8S-Pco" id="eSg-Ru-m0e"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="575" y="86"/>
         </scene>
         <!--Initial View Controller-->
         <scene sceneID="rUA-OI-NGd">

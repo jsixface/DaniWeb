@@ -26,6 +26,7 @@
 		C8DC100A18BEE6D4004F222B /* DaniWebTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DC100918BEE6D4004F222B /* DaniWebTests.m */; };
 		C8F0DF9C18C2988E00F67727 /* DWMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8F0DF9B18C2988E00F67727 /* DWMenuView.m */; };
 		C8F0DF9F18C29D3D00F67727 /* DWMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C8F0DF9E18C29D3D00F67727 /* DWMenuItem.m */; };
+		C8F55EFA18DF2A6F005BB7E3 /* DWContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8F55EF918DF2A6F005BB7E3 /* DWContentViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		C8F0DF9B18C2988E00F67727 /* DWMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWMenuView.m; sourceTree = "<group>"; };
 		C8F0DF9D18C29D3D00F67727 /* DWMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWMenuItem.h; sourceTree = "<group>"; };
 		C8F0DF9E18C29D3D00F67727 /* DWMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWMenuItem.m; sourceTree = "<group>"; };
+		C8F55EF818DF2A6F005BB7E3 /* DWContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWContentViewController.h; sourceTree = "<group>"; };
+		C8F55EF918DF2A6F005BB7E3 /* DWContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWContentViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,10 +141,7 @@
 				C8DC0FED18BEE6D4004F222B /* DWAppDelegate.h */,
 				C8DC0FEE18BEE6D4004F222B /* DWAppDelegate.m */,
 				C8DC0FF018BEE6D4004F222B /* Main.storyboard */,
-				C86391C718DBE87800862ED9 /* DWInitialViewController.h */,
-				C86391C818DBE87800862ED9 /* DWInitialViewController.m */,
-				C8DC0FF318BEE6D4004F222B /* DWMenuViewController.h */,
-				C8DC0FF418BEE6D4004F222B /* DWMenuViewController.m */,
+				C8F55EFB18DF2A79005BB7E3 /* View Controllers */,
 				C8DC0FF618BEE6D4004F222B /* Images.xcassets */,
 				C8F0DF9918C2966800F67727 /* Views */,
 				C8A9085418C3B92B00A780D9 /* Utilities */,
@@ -189,6 +189,19 @@
 				C8F0DF9B18C2988E00F67727 /* DWMenuView.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		C8F55EFB18DF2A79005BB7E3 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C86391C718DBE87800862ED9 /* DWInitialViewController.h */,
+				C86391C818DBE87800862ED9 /* DWInitialViewController.m */,
+				C8DC0FF318BEE6D4004F222B /* DWMenuViewController.h */,
+				C8DC0FF418BEE6D4004F222B /* DWMenuViewController.m */,
+				C8F55EF818DF2A6F005BB7E3 /* DWContentViewController.h */,
+				C8F55EF918DF2A6F005BB7E3 /* DWContentViewController.m */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8DC0FEB18BEE6D4004F222B /* main.m in Sources */,
+				C8F55EFA18DF2A6F005BB7E3 /* DWContentViewController.m in Sources */,
 				C8F0DF9F18C29D3D00F67727 /* DWMenuItem.m in Sources */,
 				C8DC0FF518BEE6D4004F222B /* DWMenuViewController.m in Sources */,
 				C8A9085318C3B91A00A780D9 /* UIColor+ColourTheme.m in Sources */,

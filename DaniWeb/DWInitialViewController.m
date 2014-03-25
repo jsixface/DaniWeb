@@ -7,12 +7,16 @@
 //
 
 #import "DWInitialViewController.h"
+#import "DWContentViewController.h"
+#import "DWMenuViewController.h"
 
 @interface DWInitialViewController ()
-
+@property(nonatomic) DWContentViewController * contentView;
 @end
 
 @implementation DWInitialViewController
+
+@synthesize contentView = _containerView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,14 +32,34 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
-    CGRect frame = self.view.bounds;
-    UIViewController * menuViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
+
+    
+    DWMenuViewController * menuViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
     [self addChildViewController:menuViewController];
+    
     [menuViewController didMoveToParentViewController:self];
-    [menuViewController.view setFrame:frame];
+
+
     [self.view addSubview:menuViewController.view ];
-    
-    
+    menuViewController.stuffController = self.contentView;
+
+}
+
+
+-(DWContentViewController * ) contentView
+{
+    if (!_containerView) {
+        DWContentViewController * controller = [self.storyboard instantiateViewControllerWithIdentifier:@"ContentView"];
+        [self addChildViewController:controller];
+        
+        
+        CGRect windowBounds = self.view.bounds;
+        [controller.view setFrame:windowBounds];
+        
+        [self.view addSubview:controller.view];
+        _containerView = controller;
+    }
+    return _containerView;
 }
 
 - (void)didReceiveMemoryWarning
