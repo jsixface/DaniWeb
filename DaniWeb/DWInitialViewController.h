@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DWDeclaredConstants.h"
 
 
 @interface DWInitialViewController : UIViewController

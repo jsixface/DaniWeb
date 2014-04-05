@@ -8,11 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DWContentViewController : UIViewController
-- (IBAction)contentPanned:(id)sender;
-- (void) openMenuForItem:(NSString *) string;
+@interface DWContentViewController : UIViewController<UITableViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UIPanGestureRecognizer *panGesture;
-@property (strong, nonatomic) IBOutlet UILabel *lblTitle;
+
 
 @end

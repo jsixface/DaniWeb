@@ -18,9 +18,8 @@
     {
         [self setFrame:frame];
         [self setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
-        
         [self setBackgroundColor:[UIColor DWMenuBackColour]];
-        [self setRowHeight:30];
+//        [self setRowHeight:30];
         [self setSeparatorColor:[UIColor DWMenuLineColour]];
         [self setSectionIndexColor:[UIColor whiteColor]];
         [self setSectionIndexBackgroundColor:[UIColor DWMenuBackColour]];

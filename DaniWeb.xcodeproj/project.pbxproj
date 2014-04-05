@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		C86391C918DBE87800862ED9 /* DWInitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C86391C818DBE87800862ED9 /* DWInitialViewController.m */; };
+		C879324318E72DDB00287D5A /* DWDealer.m in Sources */ = {isa = PBXBuildFile; fileRef = C879324218E72DDB00287D5A /* DWDealer.m */; };
+		C8836A9618F071C1003074D1 /* DWNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8836A9518F071C1003074D1 /* DWNavigationViewController.m */; };
 		C8A9085318C3B91A00A780D9 /* UIColor+ColourTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A9085218C3B91A00A780D9 /* UIColor+ColourTheme.m */; };
-		C8A9085818C3EABF00A780D9 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = C8A9085718C3EABF00A780D9 /* arrow.png */; };
 		C8DC0FDF18BEE6D4004F222B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DC0FDE18BEE6D4004F222B /* Foundation.framework */; };
 		C8DC0FE118BEE6D4004F222B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DC0FE018BEE6D4004F222B /* CoreGraphics.framework */; };
 		C8DC0FE318BEE6D4004F222B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DC0FE218BEE6D4004F222B /* UIKit.framework */; };
@@ -40,11 +41,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C810D4CF18E26C0D007EA461 /* DWDeclaredConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWDeclaredConstants.h; sourceTree = "<group>"; };
 		C86391C718DBE87800862ED9 /* DWInitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWInitialViewController.h; sourceTree = "<group>"; };
 		C86391C818DBE87800862ED9 /* DWInitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWInitialViewController.m; sourceTree = "<group>"; };
+		C879324118E72DDB00287D5A /* DWDealer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWDealer.h; sourceTree = "<group>"; };
+		C879324218E72DDB00287D5A /* DWDealer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWDealer.m; sourceTree = "<group>"; };
+		C8836A9418F071C1003074D1 /* DWNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWNavigationViewController.h; sourceTree = "<group>"; };
+		C8836A9518F071C1003074D1 /* DWNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWNavigationViewController.m; sourceTree = "<group>"; };
 		C8A9085118C3B91A00A780D9 /* UIColor+ColourTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ColourTheme.h"; sourceTree = "<group>"; };
 		C8A9085218C3B91A00A780D9 /* UIColor+ColourTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ColourTheme.m"; sourceTree = "<group>"; };
-		C8A9085718C3EABF00A780D9 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		C8DC0FDB18BEE6D4004F222B /* DaniWeb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaniWeb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8DC0FDE18BEE6D4004F222B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C8DC0FE018BEE6D4004F222B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -101,6 +106,7 @@
 			children = (
 				C8A9085118C3B91A00A780D9 /* UIColor+ColourTheme.h */,
 				C8A9085218C3B91A00A780D9 /* UIColor+ColourTheme.m */,
+				C810D4CF18E26C0D007EA461 /* DWDeclaredConstants.h */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -138,14 +144,16 @@
 		C8DC0FE418BEE6D4004F222B /* DaniWeb */ = {
 			isa = PBXGroup;
 			children = (
-				C8DC0FED18BEE6D4004F222B /* DWAppDelegate.h */,
-				C8DC0FEE18BEE6D4004F222B /* DWAppDelegate.m */,
+				C86391C718DBE87800862ED9 /* DWInitialViewController.h */,
+				C86391C818DBE87800862ED9 /* DWInitialViewController.m */,
 				C8DC0FF018BEE6D4004F222B /* Main.storyboard */,
-				C8F55EFB18DF2A79005BB7E3 /* View Controllers */,
+				C8F55EFB18DF2A79005BB7E3 /* Content */,
 				C8DC0FF618BEE6D4004F222B /* Images.xcassets */,
-				C8F0DF9918C2966800F67727 /* Views */,
+				C8F0DF9918C2966800F67727 /* Menu */,
 				C8A9085418C3B92B00A780D9 /* Utilities */,
 				C8DC0FE518BEE6D4004F222B /* Supporting Files */,
+				C879324118E72DDB00287D5A /* DWDealer.h */,
+				C879324218E72DDB00287D5A /* DWDealer.m */,
 			);
 			path = DaniWeb;
 			sourceTree = "<group>";
@@ -153,7 +161,8 @@
 		C8DC0FE518BEE6D4004F222B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C8A9085718C3EABF00A780D9 /* arrow.png */,
+				C8DC0FED18BEE6D4004F222B /* DWAppDelegate.h */,
+				C8DC0FEE18BEE6D4004F222B /* DWAppDelegate.m */,
 				C8DC0FE618BEE6D4004F222B /* DaniWeb-Info.plist */,
 				C8DC0FE718BEE6D4004F222B /* InfoPlist.strings */,
 				C8DC0FEA18BEE6D4004F222B /* main.m */,
@@ -180,28 +189,28 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		C8F0DF9918C2966800F67727 /* Views */ = {
+		C8F0DF9918C2966800F67727 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
 				C8F0DF9D18C29D3D00F67727 /* DWMenuItem.h */,
+				C8DC0FF318BEE6D4004F222B /* DWMenuViewController.h */,
+				C8DC0FF418BEE6D4004F222B /* DWMenuViewController.m */,
 				C8F0DF9E18C29D3D00F67727 /* DWMenuItem.m */,
 				C8F0DF9A18C2988E00F67727 /* DWMenuView.h */,
 				C8F0DF9B18C2988E00F67727 /* DWMenuView.m */,
 			);
-			name = Views;
+			name = Menu;
 			sourceTree = "<group>";
 		};
-		C8F55EFB18DF2A79005BB7E3 /* View Controllers */ = {
+		C8F55EFB18DF2A79005BB7E3 /* Content */ = {
 			isa = PBXGroup;
 			children = (
-				C86391C718DBE87800862ED9 /* DWInitialViewController.h */,
-				C86391C818DBE87800862ED9 /* DWInitialViewController.m */,
-				C8DC0FF318BEE6D4004F222B /* DWMenuViewController.h */,
-				C8DC0FF418BEE6D4004F222B /* DWMenuViewController.m */,
 				C8F55EF818DF2A6F005BB7E3 /* DWContentViewController.h */,
 				C8F55EF918DF2A6F005BB7E3 /* DWContentViewController.m */,
+				C8836A9418F071C1003074D1 /* DWNavigationViewController.h */,
+				C8836A9518F071C1003074D1 /* DWNavigationViewController.m */,
 			);
-			name = "View Controllers";
+			name = Content;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,7 +258,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = DW;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = DaniWeb;
 				TargetAttributes = {
 					C8DC0FDA18BEE6D4004F222B = {
@@ -290,7 +299,6 @@
 			files = (
 				C8DC0FF718BEE6D4004F222B /* Images.xcassets in Resources */,
 				C8DC0FE918BEE6D4004F222B /* InfoPlist.strings in Resources */,
-				C8A9085818C3EABF00A780D9 /* arrow.png in Resources */,
 				C8DC0FF218BEE6D4004F222B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,11 +321,13 @@
 				C8DC0FEB18BEE6D4004F222B /* main.m in Sources */,
 				C8F55EFA18DF2A6F005BB7E3 /* DWContentViewController.m in Sources */,
 				C8F0DF9F18C29D3D00F67727 /* DWMenuItem.m in Sources */,
+				C879324318E72DDB00287D5A /* DWDealer.m in Sources */,
 				C8DC0FF518BEE6D4004F222B /* DWMenuViewController.m in Sources */,
 				C8A9085318C3B91A00A780D9 /* UIColor+ColourTheme.m in Sources */,
 				C8F0DF9C18C2988E00F67727 /* DWMenuView.m in Sources */,
 				C86391C918DBE87800862ED9 /* DWInitialViewController.m in Sources */,
 				C8DC0FEF18BEE6D4004F222B /* DWAppDelegate.m in Sources */,
+				C8836A9618F071C1003074D1 /* DWNavigationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,7 +381,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -410,7 +419,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -468,7 +476,6 @@
 		C8DC101118BEE6D4004F222B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DaniWeb.app/DaniWeb";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -491,7 +498,6 @@
 		C8DC101218BEE6D4004F222B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DaniWeb.app/DaniWeb";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",

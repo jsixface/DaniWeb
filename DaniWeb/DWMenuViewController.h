@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-@class DWContentViewController;
+@class DWDealer;
+@class DWNavigationViewController;
 
 @interface DWMenuViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UIView *parentView;
 @property (strong, nonatomic) IBOutlet UIView *entireContiner;
+@property (strong, nonatomic) DWDealer * dealer;
 
-@property DWContentViewController * stuffController;
+@property DWNavigationViewController * stuffController;
 @end

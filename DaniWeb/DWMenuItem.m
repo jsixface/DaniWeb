@@ -26,9 +26,10 @@
     self = [super init];
     if (self) {
         [self.textLabel setTextColor:[UIColor whiteColor]];
-        [self setBackgroundColor:[UIColor clearColor ]];
+        [self.textLabel setNumberOfLines:0];
         [self.textLabel setFont:[UIFont fontWithDescriptor:[UIFontDescriptor preferredFontDescriptorWithTextStyle:UIFontTextStyleSubheadline] size:0]];
         [self setHighlighted:NO];
+        [self setBackgroundColor:[UIColor clearColor ]];
         [self setSelected:NO];
         [self setSelectionStyle:UITableViewCellSelectionStyleNone];
         

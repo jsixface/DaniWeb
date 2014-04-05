@@ -9,14 +9,14 @@
 #import "DWInitialViewController.h"
 #import "DWContentViewController.h"
 #import "DWMenuViewController.h"
+#import "DWNavigationViewController.h"
 
 @interface DWInitialViewController ()
-@property(nonatomic) DWContentViewController * contentView;
+@property(nonatomic) DWNavigationViewController * contentViewController;
 @end
 
 @implementation DWInitialViewController
 
-@synthesize contentView = _containerView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,35 +31,35 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
-
-    
     DWMenuViewController * menuViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
     [self addChildViewController:menuViewController];
-    
     [menuViewController didMoveToParentViewController:self];
-
-
     [self.view addSubview:menuViewController.view ];
-    menuViewController.stuffController = self.contentView;
+    
+    menuViewController.stuffController = self.contentViewController;
+    
+}
 
+-(void)viewDidLayoutSubviews
+{
 }
 
 
--(DWContentViewController * ) contentView
+-(DWNavigationViewController * ) contentViewController
 {
-    if (!_containerView) {
-        DWContentViewController * controller = [self.storyboard instantiateViewControllerWithIdentifier:@"ContentView"];
-        [self addChildViewController:controller];
+    if (!_contentViewController) {
         
+        DWNavigationViewController * navigator = [self.storyboard instantiateViewControllerWithIdentifier:@"navigator"];
+        
+        [self addChildViewController:navigator];
         
         CGRect windowBounds = self.view.bounds;
-        [controller.view setFrame:windowBounds];
-        
-        [self.view addSubview:controller.view];
-        _containerView = controller;
+        [navigator.view setFrame:windowBounds];
+        [self.view addSubview:navigator.view];
+        _contentViewController = navigator;
+
     }
-    return _containerView;
+    return _contentViewController;
 }
 
 - (void)didReceiveMemoryWarning
