@@ -46,17 +46,28 @@
     [menuStack addObject:tableMainMenu];
     [self.entireContiner addSubview:tableMainMenu];
     [tableMainMenu setDataSource:self];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshMainMenu:) name:@"com.sixface.DaniWeb.mainMenuLoaded" object:nil];
 }
 
-- (void)didReceiveMemoryWarning
+-(void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"com.sixface.DaniWeb.mainMenuLoaded" object:nil];
 }
 
 #pragma mark -
 #pragma mark Main Menu Helpers
 
+
+-(void) refreshMainMenu: (NSNotification *) notif
+{
+    //reload the datasource in all menu in menu stack
+    for (DWMenuView * menu in menuStack) {
+        NSLog(@"reloading the data for menu - %d", [menu tag]);
+        [menu reloadData];
+    }
+}
 
 -(void)resetCellColours: (UITableView *) tableview
 {
@@ -148,8 +159,10 @@
     [self resetCellColours:tableView];
     [selectedCell setBackgroundColor:[UIColor DWMenuLineColour]];
     
-    [self.stuffController  openMenuForItem:[selectedCell.textLabel text]];
-    NSLog(@"calling controller - %@", self.stuffController.description  );
+    [self.stuffController  openMenuForItem:@{@"id":[NSString stringWithFormat:@"%d", [selectedCell tag]],
+                                             @"title": selectedCell.textLabel.text
+                                             }];
+
 }
 
 #pragma mark -

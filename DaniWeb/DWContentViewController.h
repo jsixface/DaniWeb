@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DWContentViewController : UIViewController<UITableViewDataSource>
+@interface DWContentViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UIPanGestureRecognizer *panGesture;
 
+- (void) openMenuForItem:(NSDictionary *) string;
 
 @end

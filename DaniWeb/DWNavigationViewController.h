@@ -12,7 +12,7 @@
 @interface DWNavigationViewController : UINavigationController<UINavigationControllerDelegate>
 
 @property(strong, nonatomic) DWContentViewController * rootController;
-- (void) openMenuForItem:(NSString *) string;
+- (void) openMenuForItem:(NSDictionary *) string;
 -(void) toggleContent;
 
 

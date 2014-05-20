@@ -10,8 +10,6 @@
 
 @interface DWDealer : NSObject
 
-@property (strong, nonatomic)    NSArray * mainMenu;
-
-
--(NSArray *) getSubMenuForItemID:(int) parendId;
+-(NSArray *) getSubMenuForItemID:(NSInteger) parendId;
+-(NSArray*) getContentForForumID:(NSString*) forumId;
 @end

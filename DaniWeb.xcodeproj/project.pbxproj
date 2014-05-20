@@ -8,9 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		C86391C918DBE87800862ED9 /* DWInitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C86391C818DBE87800862ED9 /* DWInitialViewController.m */; };
+		C86B313218FF810E001061AE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C86B313118FF810E001061AE /* QuartzCore.framework */; };
 		C879324318E72DDB00287D5A /* DWDealer.m in Sources */ = {isa = PBXBuildFile; fileRef = C879324218E72DDB00287D5A /* DWDealer.m */; };
 		C8836A9618F071C1003074D1 /* DWNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8836A9518F071C1003074D1 /* DWNavigationViewController.m */; };
+		C8A75CB118F3A45500F81AC3 /* DWArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A75CB018F3A45500F81AC3 /* DWArticleViewController.m */; };
 		C8A9085318C3B91A00A780D9 /* UIColor+ColourTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A9085218C3B91A00A780D9 /* UIColor+ColourTheme.m */; };
+		C8BCCE5418F64144006AE2E5 /* DWContentCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8BCCE5318F64144006AE2E5 /* DWContentCellView.m */; };
 		C8DC0FDF18BEE6D4004F222B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DC0FDE18BEE6D4004F222B /* Foundation.framework */; };
 		C8DC0FE118BEE6D4004F222B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DC0FE018BEE6D4004F222B /* CoreGraphics.framework */; };
 		C8DC0FE318BEE6D4004F222B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DC0FE218BEE6D4004F222B /* UIKit.framework */; };
@@ -44,12 +47,17 @@
 		C810D4CF18E26C0D007EA461 /* DWDeclaredConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWDeclaredConstants.h; sourceTree = "<group>"; };
 		C86391C718DBE87800862ED9 /* DWInitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWInitialViewController.h; sourceTree = "<group>"; };
 		C86391C818DBE87800862ED9 /* DWInitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWInitialViewController.m; sourceTree = "<group>"; };
+		C86B313118FF810E001061AE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C879324118E72DDB00287D5A /* DWDealer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWDealer.h; sourceTree = "<group>"; };
 		C879324218E72DDB00287D5A /* DWDealer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWDealer.m; sourceTree = "<group>"; };
 		C8836A9418F071C1003074D1 /* DWNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWNavigationViewController.h; sourceTree = "<group>"; };
 		C8836A9518F071C1003074D1 /* DWNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWNavigationViewController.m; sourceTree = "<group>"; };
+		C8A75CAF18F3A45500F81AC3 /* DWArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWArticleViewController.h; sourceTree = "<group>"; };
+		C8A75CB018F3A45500F81AC3 /* DWArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWArticleViewController.m; sourceTree = "<group>"; };
 		C8A9085118C3B91A00A780D9 /* UIColor+ColourTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ColourTheme.h"; sourceTree = "<group>"; };
 		C8A9085218C3B91A00A780D9 /* UIColor+ColourTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ColourTheme.m"; sourceTree = "<group>"; };
+		C8BCCE5218F64144006AE2E5 /* DWContentCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWContentCellView.h; sourceTree = "<group>"; };
+		C8BCCE5318F64144006AE2E5 /* DWContentCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWContentCellView.m; sourceTree = "<group>"; };
 		C8DC0FDB18BEE6D4004F222B /* DaniWeb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaniWeb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8DC0FDE18BEE6D4004F222B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C8DC0FE018BEE6D4004F222B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -82,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C86B313218FF810E001061AE /* QuartzCore.framework in Frameworks */,
 				C8DC0FE118BEE6D4004F222B /* CoreGraphics.framework in Frameworks */,
 				C8DC0FE318BEE6D4004F222B /* UIKit.framework in Frameworks */,
 				C8DC0FDF18BEE6D4004F222B /* Foundation.framework in Frameworks */,
@@ -133,6 +142,7 @@
 		C8DC0FDD18BEE6D4004F222B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C86B313118FF810E001061AE /* QuartzCore.framework */,
 				C8DC0FDE18BEE6D4004F222B /* Foundation.framework */,
 				C8DC0FE018BEE6D4004F222B /* CoreGraphics.framework */,
 				C8DC0FE218BEE6D4004F222B /* UIKit.framework */,
@@ -209,6 +219,10 @@
 				C8F55EF918DF2A6F005BB7E3 /* DWContentViewController.m */,
 				C8836A9418F071C1003074D1 /* DWNavigationViewController.h */,
 				C8836A9518F071C1003074D1 /* DWNavigationViewController.m */,
+				C8A75CAF18F3A45500F81AC3 /* DWArticleViewController.h */,
+				C8A75CB018F3A45500F81AC3 /* DWArticleViewController.m */,
+				C8BCCE5218F64144006AE2E5 /* DWContentCellView.h */,
+				C8BCCE5318F64144006AE2E5 /* DWContentCellView.m */,
 			);
 			name = Content;
 			sourceTree = "<group>";
@@ -325,7 +339,9 @@
 				C8DC0FF518BEE6D4004F222B /* DWMenuViewController.m in Sources */,
 				C8A9085318C3B91A00A780D9 /* UIColor+ColourTheme.m in Sources */,
 				C8F0DF9C18C2988E00F67727 /* DWMenuView.m in Sources */,
+				C8BCCE5418F64144006AE2E5 /* DWContentCellView.m in Sources */,
 				C86391C918DBE87800862ED9 /* DWInitialViewController.m in Sources */,
+				C8A75CB118F3A45500F81AC3 /* DWArticleViewController.m in Sources */,
 				C8DC0FEF18BEE6D4004F222B /* DWAppDelegate.m in Sources */,
 				C8836A9618F071C1003074D1 /* DWNavigationViewController.m in Sources */,
 			);

@@ -15,15 +15,12 @@
 @property (nonatomic) CGFloat halfWidth;
 @property (nonatomic) CGFloat eightyThresholdPoint ;
 @property (nonatomic) CGPoint touchStartPoint;
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapGesture;
 @property (strong, nonatomic) IBOutlet UIPanGestureRecognizer *panGesture;
 @end
 
 @implementation DWNavigationViewController
 
--(NSString *)description
-{
-    return @"The entire navigation controller";
-}
 
 - (void)viewDidLoad
 {
@@ -33,8 +30,17 @@
     self.originalFrame = self.view.frame;
     self.halfWidth = self.originalFrame.size.width/2;
     self.eightyThresholdPoint = (_originalFrame.origin.x + _originalFrame.size.width) * DW_CONTENT_SLIDE_PERCENT;
-    self.view.gestureRecognizers = @[self.panGesture];
     self.rootController = self.viewControllers.firstObject;
+    self.rootController.view.gestureRecognizers = @[self.panGesture, self.tapGesture];
+    
+    // set the shadow of the content
+    CALayer* layer = self.view.layer;
+    layer.shadowColor = [[UIColor blackColor] CGColor];
+    layer.shadowOffset = CGSizeMake(-5,-5);
+    layer.shadowRadius = 8.0f;
+    layer.shadowOpacity  = 0.8f;
+    layer.shadowPath  = [[UIBezierPath bezierPathWithRect:layer.bounds] CGPath];
+    
 }
 
 
@@ -98,11 +104,14 @@
     
 }
 
-- (void) openMenuForItem:(NSString *) string
+- (IBAction)contentTapped:(UITapGestureRecognizer *)sender
 {
-    NSLog(@"opening menu - %@", string);
-    self.title = string;
-    self.rootController.title = string;
+    [self toggleContent];
+}
+
+- (void) openMenuForItem:(NSDictionary *) values
+{
+    [self.rootController openMenuForItem:values ];
     [self slideBackToPosition];
 }
 
@@ -124,6 +133,7 @@
                      }
                      completion:^(BOOL completed){
                          _contentSlided = false;
+                         self.tapGesture.enabled  = false;
                      }];
 }
 
@@ -139,6 +149,7 @@
                      }
                      completion:^(BOOL completed){
                          _contentSlided = true;
+                         self.tapGesture.enabled = true;
                      }];
     
 }
