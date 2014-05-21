@@ -43,13 +43,16 @@
         
         //if the contents is not empty, refresh the contents.
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            NSDictionary * menuData = [self getDataFromUrl:[self urlForItem:@"forums" underItem:nil withIds:nil]];
-            _mainMenu = menuData[@"data"];
-            [_mainMenu writeToFile:filepath atomically:YES];
-            NSLog(@"Reloaded main menu. Posting Notification");
-            
-            // dispatch a notification to reload the main menu
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"com.sixface.DaniWeb.mainMenuLoaded" object:self];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                NSDictionary * menuData = [self getDataFromUrl:[self urlForItem:@"forums" underItem:nil withIds:nil]];
+                _mainMenu = menuData[@"data"];
+                [_mainMenu writeToFile:filepath atomically:YES];
+                NSLog(@"Reloaded main menu. Posting Notification");
+                
+                // dispatch a notification to reload the main menu
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"com.sixface.DaniWeb.mainMenuLoaded" object:self];
+            });
         });
     }
     //return menu loaded from file.
@@ -95,6 +98,7 @@
 
 -(NSArray *)getContentForForumID:(NSString *)forumId
 {
+    sleep(3);
     NSArray* articles = nil;
     if (forumId)
     {

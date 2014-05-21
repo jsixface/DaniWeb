@@ -10,6 +10,7 @@
 #import "DWContentViewController.h"
 #import "DWNavigationViewController.h"
 #import "DWContentCellView.h"
+#import "DWLoadingView.h"
 #import "DWDealer.h"
 
 #define CELL_HEIGHT 80.0
@@ -38,7 +39,6 @@
     self.view.layer.shadowOpacity = 0.75f;
     self.view.layer.shadowRadius = 10.0f;
     self.view.layer.shadowColor = [UIColor blackColor].CGColor;
-
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -63,17 +63,35 @@
     // set the title
     self.title =menuitem[@"title"];
     
-    // get the data from the dealer
-    // set the data to data holder
-    self.totalPosts = [self.dealer getContentForForumID:menuitem[@"id"]];
     
+    // show the loading view
+    CGRect loadingFrame = self.postsTable.frame;
+    DWLoadingView * loadingView = [[DWLoadingView alloc] initWithFrame:loadingFrame];
+    loadingView.tag= 99;
+    [self.view addSubview:loadingView];
     
-    // reload the table
-    [self.postsTable reloadData];
-    [self.postsTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]
-                           atScrollPosition:UITableViewScrollPositionTop
-                                   animated:NO];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        
+        // get the data from the dealer
+        // set the data to data holder
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            self.totalPosts = [self.dealer getContentForForumID:menuitem[@"id"]];
+            [self.postsTable reloadData];
+            [self.postsTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]
+                                   atScrollPosition:UITableViewScrollPositionTop
+                                           animated:NO];
+            // remove the loading view
+            NSArray *subviews = self.view.subviews;
+            for (UIView * subview in subviews) {
+                if (subview.tag == 99) {
+                    [subview removeFromSuperview];
+                    break;
+                }
+            }
+        });
+    });
 }
+
 
 - (IBAction)toggleContent:(UIButton *)sender
 {

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C80F8C79192C1B59006347D0 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = C80F8C78192C1B59006347D0 /* loading.gif */; };
+		C80F8C7C192C1BDC006347D0 /* DWLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C80F8C7B192C1BDC006347D0 /* DWLoadingView.m */; };
 		C86391C918DBE87800862ED9 /* DWInitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C86391C818DBE87800862ED9 /* DWInitialViewController.m */; };
 		C86B313218FF810E001061AE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C86B313118FF810E001061AE /* QuartzCore.framework */; };
 		C879324318E72DDB00287D5A /* DWDealer.m in Sources */ = {isa = PBXBuildFile; fileRef = C879324218E72DDB00287D5A /* DWDealer.m */; };
@@ -14,6 +16,11 @@
 		C8A75CB118F3A45500F81AC3 /* DWArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A75CB018F3A45500F81AC3 /* DWArticleViewController.m */; };
 		C8A9085318C3B91A00A780D9 /* UIColor+ColourTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A9085218C3B91A00A780D9 /* UIColor+ColourTheme.m */; };
 		C8BCCE5418F64144006AE2E5 /* DWContentCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8BCCE5318F64144006AE2E5 /* DWContentCellView.m */; };
+		C8C32BD1192C346100F98CB6 /* loading1.png in Resources */ = {isa = PBXBuildFile; fileRef = C8C32BCC192C346100F98CB6 /* loading1.png */; };
+		C8C32BD2192C346100F98CB6 /* loading2.png in Resources */ = {isa = PBXBuildFile; fileRef = C8C32BCD192C346100F98CB6 /* loading2.png */; };
+		C8C32BD3192C346100F98CB6 /* loading3.png in Resources */ = {isa = PBXBuildFile; fileRef = C8C32BCE192C346100F98CB6 /* loading3.png */; };
+		C8C32BD4192C346100F98CB6 /* loading4.png in Resources */ = {isa = PBXBuildFile; fileRef = C8C32BCF192C346100F98CB6 /* loading4.png */; };
+		C8C32BD5192C346100F98CB6 /* loading5.png in Resources */ = {isa = PBXBuildFile; fileRef = C8C32BD0192C346100F98CB6 /* loading5.png */; };
 		C8DC0FDF18BEE6D4004F222B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DC0FDE18BEE6D4004F222B /* Foundation.framework */; };
 		C8DC0FE118BEE6D4004F222B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DC0FE018BEE6D4004F222B /* CoreGraphics.framework */; };
 		C8DC0FE318BEE6D4004F222B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DC0FE218BEE6D4004F222B /* UIKit.framework */; };
@@ -44,6 +51,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C80F8C78192C1B59006347D0 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
+		C80F8C7A192C1BDC006347D0 /* DWLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWLoadingView.h; sourceTree = "<group>"; };
+		C80F8C7B192C1BDC006347D0 /* DWLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWLoadingView.m; sourceTree = "<group>"; };
 		C810D4CF18E26C0D007EA461 /* DWDeclaredConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWDeclaredConstants.h; sourceTree = "<group>"; };
 		C86391C718DBE87800862ED9 /* DWInitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWInitialViewController.h; sourceTree = "<group>"; };
 		C86391C818DBE87800862ED9 /* DWInitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWInitialViewController.m; sourceTree = "<group>"; };
@@ -58,6 +68,11 @@
 		C8A9085218C3B91A00A780D9 /* UIColor+ColourTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ColourTheme.m"; sourceTree = "<group>"; };
 		C8BCCE5218F64144006AE2E5 /* DWContentCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWContentCellView.h; sourceTree = "<group>"; };
 		C8BCCE5318F64144006AE2E5 /* DWContentCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWContentCellView.m; sourceTree = "<group>"; };
+		C8C32BCC192C346100F98CB6 /* loading1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading1.png; sourceTree = "<group>"; };
+		C8C32BCD192C346100F98CB6 /* loading2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading2.png; sourceTree = "<group>"; };
+		C8C32BCE192C346100F98CB6 /* loading3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading3.png; sourceTree = "<group>"; };
+		C8C32BCF192C346100F98CB6 /* loading4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading4.png; sourceTree = "<group>"; };
+		C8C32BD0192C346100F98CB6 /* loading5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading5.png; sourceTree = "<group>"; };
 		C8DC0FDB18BEE6D4004F222B /* DaniWeb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaniWeb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8DC0FDE18BEE6D4004F222B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C8DC0FE018BEE6D4004F222B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -120,6 +135,18 @@
 			name = Utilities;
 			sourceTree = "<group>";
 		};
+		C8C32BCB192C346100F98CB6 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				C8C32BCC192C346100F98CB6 /* loading1.png */,
+				C8C32BCD192C346100F98CB6 /* loading2.png */,
+				C8C32BCE192C346100F98CB6 /* loading3.png */,
+				C8C32BCF192C346100F98CB6 /* loading4.png */,
+				C8C32BD0192C346100F98CB6 /* loading5.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		C8DC0FD218BEE6D4004F222B = {
 			isa = PBXGroup;
 			children = (
@@ -157,13 +184,16 @@
 				C86391C718DBE87800862ED9 /* DWInitialViewController.h */,
 				C86391C818DBE87800862ED9 /* DWInitialViewController.m */,
 				C8DC0FF018BEE6D4004F222B /* Main.storyboard */,
+				C879324118E72DDB00287D5A /* DWDealer.h */,
+				C879324218E72DDB00287D5A /* DWDealer.m */,
+				C80F8C7A192C1BDC006347D0 /* DWLoadingView.h */,
+				C80F8C7B192C1BDC006347D0 /* DWLoadingView.m */,
 				C8F55EFB18DF2A79005BB7E3 /* Content */,
-				C8DC0FF618BEE6D4004F222B /* Images.xcassets */,
 				C8F0DF9918C2966800F67727 /* Menu */,
 				C8A9085418C3B92B00A780D9 /* Utilities */,
 				C8DC0FE518BEE6D4004F222B /* Supporting Files */,
-				C879324118E72DDB00287D5A /* DWDealer.h */,
-				C879324218E72DDB00287D5A /* DWDealer.m */,
+				C8C32BCB192C346100F98CB6 /* images */,
+				C8DC0FF618BEE6D4004F222B /* Images.xcassets */,
 			);
 			path = DaniWeb;
 			sourceTree = "<group>";
@@ -173,6 +203,7 @@
 			children = (
 				C8DC0FED18BEE6D4004F222B /* DWAppDelegate.h */,
 				C8DC0FEE18BEE6D4004F222B /* DWAppDelegate.m */,
+				C80F8C78192C1B59006347D0 /* loading.gif */,
 				C8DC0FE618BEE6D4004F222B /* DaniWeb-Info.plist */,
 				C8DC0FE718BEE6D4004F222B /* InfoPlist.strings */,
 				C8DC0FEA18BEE6D4004F222B /* main.m */,
@@ -311,9 +342,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8C32BD3192C346100F98CB6 /* loading3.png in Resources */,
+				C8C32BD4192C346100F98CB6 /* loading4.png in Resources */,
 				C8DC0FF718BEE6D4004F222B /* Images.xcassets in Resources */,
+				C80F8C79192C1B59006347D0 /* loading.gif in Resources */,
+				C8C32BD1192C346100F98CB6 /* loading1.png in Resources */,
 				C8DC0FE918BEE6D4004F222B /* InfoPlist.strings in Resources */,
 				C8DC0FF218BEE6D4004F222B /* Main.storyboard in Resources */,
+				C8C32BD2192C346100F98CB6 /* loading2.png in Resources */,
+				C8C32BD5192C346100F98CB6 /* loading5.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +380,7 @@
 				C86391C918DBE87800862ED9 /* DWInitialViewController.m in Sources */,
 				C8A75CB118F3A45500F81AC3 /* DWArticleViewController.m in Sources */,
 				C8DC0FEF18BEE6D4004F222B /* DWAppDelegate.m in Sources */,
+				C80F8C7C192C1BDC006347D0 /* DWLoadingView.m in Sources */,
 				C8836A9618F071C1003074D1 /* DWNavigationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

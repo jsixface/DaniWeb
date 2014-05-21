@@ -10,6 +10,9 @@
 #import "DWContentViewController.h"
 #import "DWMenuViewController.h"
 #import "DWNavigationViewController.h"
+#import "DWLoadingView.h"
+
+#define IS_TESTING NO
 
 @interface DWInitialViewController ()
 @property(nonatomic) DWNavigationViewController * contentViewController;
@@ -21,13 +24,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    DWMenuViewController * menuViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
-    [self addChildViewController:menuViewController];
-    [menuViewController didMoveToParentViewController:self];
-    [self.view addSubview:menuViewController.view ];
     
-    menuViewController.stuffController = self.contentViewController;
+    // TODO: remove before deployment
+    if (IS_TESTING)
+    {
+        DWLoadingView * loadingView = [[DWLoadingView alloc] initWithFrame:self.view.bounds];
+        [self.view addSubview:loadingView];
+
+    }
+    else
+    {
+        DWMenuViewController * menuViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Menu"];
+        [self addChildViewController:menuViewController];
+        [menuViewController didMoveToParentViewController:self];
+        [self.view addSubview:menuViewController.view ];
+        menuViewController.stuffController = self.contentViewController;
+    }
     
 }
 
@@ -44,21 +56,21 @@
         [navigator.view setFrame:windowBounds];
         [self.view addSubview:navigator.view];
         _contentViewController = navigator;
-
+        
     }
     return _contentViewController;
 }
 
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
