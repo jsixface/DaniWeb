@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		C80F8C79192C1B59006347D0 /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = C80F8C78192C1B59006347D0 /* loading.gif */; };
 		C80F8C7C192C1BDC006347D0 /* DWLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C80F8C7B192C1BDC006347D0 /* DWLoadingView.m */; };
+		C81090BC196B9B94002B4403 /* DWForum.m in Sources */ = {isa = PBXBuildFile; fileRef = C81090BB196B9B94002B4403 /* DWForum.m */; };
+		C82A53251969C34C00DE10CA /* DWArticle.m in Sources */ = {isa = PBXBuildFile; fileRef = C82A53241969C34C00DE10CA /* DWArticle.m */; };
 		C86391C918DBE87800862ED9 /* DWInitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C86391C818DBE87800862ED9 /* DWInitialViewController.m */; };
 		C86B313218FF810E001061AE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C86B313118FF810E001061AE /* QuartzCore.framework */; };
-		C879324318E72DDB00287D5A /* DWDealer.m in Sources */ = {isa = PBXBuildFile; fileRef = C879324218E72DDB00287D5A /* DWDealer.m */; };
 		C8836A9618F071C1003074D1 /* DWNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8836A9518F071C1003074D1 /* DWNavigationViewController.m */; };
 		C8A75CB118F3A45500F81AC3 /* DWArticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A75CB018F3A45500F81AC3 /* DWArticleViewController.m */; };
 		C8A9085318C3B91A00A780D9 /* UIColor+ColourTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A9085218C3B91A00A780D9 /* UIColor+ColourTheme.m */; };
+		C8A9E79C196B8C7600BAB59E /* DWConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A9E79B196B8C7600BAB59E /* DWConfigurator.m */; };
 		C8BCCE5418F64144006AE2E5 /* DWContentCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8BCCE5318F64144006AE2E5 /* DWContentCellView.m */; };
 		C8C32BD1192C346100F98CB6 /* loading1.png in Resources */ = {isa = PBXBuildFile; fileRef = C8C32BCC192C346100F98CB6 /* loading1.png */; };
 		C8C32BD2192C346100F98CB6 /* loading2.png in Resources */ = {isa = PBXBuildFile; fileRef = C8C32BCD192C346100F98CB6 /* loading2.png */; };
@@ -38,6 +40,7 @@
 		C8F0DF9C18C2988E00F67727 /* DWMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = C8F0DF9B18C2988E00F67727 /* DWMenuView.m */; };
 		C8F0DF9F18C29D3D00F67727 /* DWMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C8F0DF9E18C29D3D00F67727 /* DWMenuItem.m */; };
 		C8F55EFA18DF2A6F005BB7E3 /* DWContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8F55EF918DF2A6F005BB7E3 /* DWContentViewController.m */; };
+		F22AE1509B114FC8A2C7642C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A25A0FB3E9214088A58A68A2 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,21 +54,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		55D5BBF455504E0BBA8B9932 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		A25A0FB3E9214088A58A68A2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C80F8C78192C1B59006347D0 /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
 		C80F8C7A192C1BDC006347D0 /* DWLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWLoadingView.h; sourceTree = "<group>"; };
 		C80F8C7B192C1BDC006347D0 /* DWLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWLoadingView.m; sourceTree = "<group>"; };
+		C8101661196CF67C00EA2A06 /* Async.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Async.h; path = DaniWebTests/Async.h; sourceTree = SOURCE_ROOT; };
+		C81090BA196B9B94002B4403 /* DWForum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWForum.h; sourceTree = "<group>"; };
+		C81090BB196B9B94002B4403 /* DWForum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWForum.m; sourceTree = "<group>"; };
 		C810D4CF18E26C0D007EA461 /* DWDeclaredConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWDeclaredConstants.h; sourceTree = "<group>"; };
+		C82A53231969C34C00DE10CA /* DWArticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWArticle.h; sourceTree = "<group>"; };
+		C82A53241969C34C00DE10CA /* DWArticle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWArticle.m; sourceTree = "<group>"; };
 		C86391C718DBE87800862ED9 /* DWInitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWInitialViewController.h; sourceTree = "<group>"; };
 		C86391C818DBE87800862ED9 /* DWInitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWInitialViewController.m; sourceTree = "<group>"; };
 		C86B313118FF810E001061AE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		C879324118E72DDB00287D5A /* DWDealer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWDealer.h; sourceTree = "<group>"; };
-		C879324218E72DDB00287D5A /* DWDealer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWDealer.m; sourceTree = "<group>"; };
 		C8836A9418F071C1003074D1 /* DWNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWNavigationViewController.h; sourceTree = "<group>"; };
 		C8836A9518F071C1003074D1 /* DWNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWNavigationViewController.m; sourceTree = "<group>"; };
 		C8A75CAF18F3A45500F81AC3 /* DWArticleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWArticleViewController.h; sourceTree = "<group>"; };
 		C8A75CB018F3A45500F81AC3 /* DWArticleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWArticleViewController.m; sourceTree = "<group>"; };
 		C8A9085118C3B91A00A780D9 /* UIColor+ColourTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ColourTheme.h"; sourceTree = "<group>"; };
 		C8A9085218C3B91A00A780D9 /* UIColor+ColourTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ColourTheme.m"; sourceTree = "<group>"; };
+		C8A9E79A196B8C7600BAB59E /* DWConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWConfigurator.h; sourceTree = "<group>"; };
+		C8A9E79B196B8C7600BAB59E /* DWConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWConfigurator.m; sourceTree = "<group>"; };
 		C8BCCE5218F64144006AE2E5 /* DWContentCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWContentCellView.h; sourceTree = "<group>"; };
 		C8BCCE5318F64144006AE2E5 /* DWContentCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWContentCellView.m; sourceTree = "<group>"; };
 		C8C32BCC192C346100F98CB6 /* loading1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading1.png; sourceTree = "<group>"; };
@@ -109,6 +119,7 @@
 				C8DC0FE118BEE6D4004F222B /* CoreGraphics.framework in Frameworks */,
 				C8DC0FE318BEE6D4004F222B /* UIKit.framework in Frameworks */,
 				C8DC0FDF18BEE6D4004F222B /* Foundation.framework in Frameworks */,
+				F22AE1509B114FC8A2C7642C /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,12 +136,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C82A53261969C35500DE10CA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C82A53231969C34C00DE10CA /* DWArticle.h */,
+				C82A53241969C34C00DE10CA /* DWArticle.m */,
+				C81090BA196B9B94002B4403 /* DWForum.h */,
+				C81090BB196B9B94002B4403 /* DWForum.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		C8A9085418C3B92B00A780D9 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				C8101661196CF67C00EA2A06 /* Async.h */,
 				C8A9085118C3B91A00A780D9 /* UIColor+ColourTheme.h */,
 				C8A9085218C3B91A00A780D9 /* UIColor+ColourTheme.m */,
 				C810D4CF18E26C0D007EA461 /* DWDeclaredConstants.h */,
+				C8A9E79A196B8C7600BAB59E /* DWConfigurator.h */,
+				C8A9E79B196B8C7600BAB59E /* DWConfigurator.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -154,6 +179,7 @@
 				C8DC100318BEE6D4004F222B /* DaniWebTests */,
 				C8DC0FDD18BEE6D4004F222B /* Frameworks */,
 				C8DC0FDC18BEE6D4004F222B /* Products */,
+				55D5BBF455504E0BBA8B9932 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -174,6 +200,7 @@
 				C8DC0FE018BEE6D4004F222B /* CoreGraphics.framework */,
 				C8DC0FE218BEE6D4004F222B /* UIKit.framework */,
 				C8DC0FFD18BEE6D4004F222B /* XCTest.framework */,
+				A25A0FB3E9214088A58A68A2 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -181,18 +208,19 @@
 		C8DC0FE418BEE6D4004F222B /* DaniWeb */ = {
 			isa = PBXGroup;
 			children = (
-				C86391C718DBE87800862ED9 /* DWInitialViewController.h */,
-				C86391C818DBE87800862ED9 /* DWInitialViewController.m */,
-				C8DC0FF018BEE6D4004F222B /* Main.storyboard */,
-				C879324118E72DDB00287D5A /* DWDealer.h */,
-				C879324218E72DDB00287D5A /* DWDealer.m */,
-				C80F8C7A192C1BDC006347D0 /* DWLoadingView.h */,
-				C80F8C7B192C1BDC006347D0 /* DWLoadingView.m */,
+				C82A53261969C35500DE10CA /* Model */,
 				C8F55EFB18DF2A79005BB7E3 /* Content */,
 				C8F0DF9918C2966800F67727 /* Menu */,
 				C8A9085418C3B92B00A780D9 /* Utilities */,
 				C8DC0FE518BEE6D4004F222B /* Supporting Files */,
 				C8C32BCB192C346100F98CB6 /* images */,
+				C86391C718DBE87800862ED9 /* DWInitialViewController.h */,
+				C86391C818DBE87800862ED9 /* DWInitialViewController.m */,
+				C8DC0FED18BEE6D4004F222B /* DWAppDelegate.h */,
+				C8DC0FEE18BEE6D4004F222B /* DWAppDelegate.m */,
+				C8DC0FF018BEE6D4004F222B /* Main.storyboard */,
+				C80F8C7A192C1BDC006347D0 /* DWLoadingView.h */,
+				C80F8C7B192C1BDC006347D0 /* DWLoadingView.m */,
 				C8DC0FF618BEE6D4004F222B /* Images.xcassets */,
 			);
 			path = DaniWeb;
@@ -201,8 +229,6 @@
 		C8DC0FE518BEE6D4004F222B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C8DC0FED18BEE6D4004F222B /* DWAppDelegate.h */,
-				C8DC0FEE18BEE6D4004F222B /* DWAppDelegate.m */,
 				C80F8C78192C1B59006347D0 /* loading.gif */,
 				C8DC0FE618BEE6D4004F222B /* DaniWeb-Info.plist */,
 				C8DC0FE718BEE6D4004F222B /* InfoPlist.strings */,
@@ -215,8 +241,8 @@
 		C8DC100318BEE6D4004F222B /* DaniWebTests */ = {
 			isa = PBXGroup;
 			children = (
-				C8DC100918BEE6D4004F222B /* DaniWebTests.m */,
 				C8DC100418BEE6D4004F222B /* Supporting Files */,
+				C8DC100918BEE6D4004F222B /* DaniWebTests.m */,
 			);
 			path = DaniWebTests;
 			sourceTree = "<group>";
@@ -265,9 +291,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C8DC100D18BEE6D4004F222B /* Build configuration list for PBXNativeTarget "DaniWeb" */;
 			buildPhases = (
+				60E412C486D74D9C85A91BFC /* Check Pods Manifest.lock */,
 				C8DC0FD718BEE6D4004F222B /* Sources */,
 				C8DC0FD818BEE6D4004F222B /* Frameworks */,
 				C8DC0FD918BEE6D4004F222B /* Resources */,
+				FA310495A488406A8E660085 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -307,6 +335,7 @@
 				ORGANIZATIONNAME = DaniWeb;
 				TargetAttributes = {
 					C8DC0FDA18BEE6D4004F222B = {
+						DevelopmentTeam = D8C2DHYP66;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -364,18 +393,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		60E412C486D74D9C85A91BFC /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FA310495A488406A8E660085 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C8DC0FD718BEE6D4004F222B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C8DC0FEB18BEE6D4004F222B /* main.m in Sources */,
+				C8A9E79C196B8C7600BAB59E /* DWConfigurator.m in Sources */,
 				C8F55EFA18DF2A6F005BB7E3 /* DWContentViewController.m in Sources */,
 				C8F0DF9F18C29D3D00F67727 /* DWMenuItem.m in Sources */,
-				C879324318E72DDB00287D5A /* DWDealer.m in Sources */,
 				C8DC0FF518BEE6D4004F222B /* DWMenuViewController.m in Sources */,
 				C8A9085318C3B91A00A780D9 /* UIColor+ColourTheme.m in Sources */,
 				C8F0DF9C18C2988E00F67727 /* DWMenuView.m in Sources */,
+				C81090BC196B9B94002B4403 /* DWForum.m in Sources */,
+				C82A53251969C34C00DE10CA /* DWArticle.m in Sources */,
 				C8BCCE5418F64144006AE2E5 /* DWContentCellView.m in Sources */,
 				C86391C918DBE87800862ED9 /* DWInitialViewController.m in Sources */,
 				C8A75CB118F3A45500F81AC3 /* DWArticleViewController.m in Sources */,
@@ -463,8 +527,17 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"$(BUILT_PRODUCTS_DIR)/../../Headers\"",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -495,7 +568,16 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"$(BUILT_PRODUCTS_DIR)/../../Headers\"",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -503,32 +585,49 @@
 		};
 		C8DC100E18BEE6D4004F222B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55D5BBF455504E0BBA8B9932 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DaniWeb/DaniWeb-Prefix.pch";
 				INFOPLIST_FILE = "DaniWeb/DaniWeb-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		C8DC100F18BEE6D4004F222B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55D5BBF455504E0BBA8B9932 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DaniWeb/DaniWeb-Prefix.pch";
 				INFOPLIST_FILE = "DaniWeb/DaniWeb-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
 		C8DC101118BEE6D4004F222B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55D5BBF455504E0BBA8B9932 /* Pods.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DaniWeb.app/DaniWeb";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -543,6 +642,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "DaniWebTests/DaniWebTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -561,6 +661,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DaniWeb/DaniWeb-Prefix.pch";
 				INFOPLIST_FILE = "DaniWebTests/DaniWebTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

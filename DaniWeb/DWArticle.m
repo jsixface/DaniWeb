@@ -10,4 +10,9 @@
 
 @implementation DWArticle
 
+-(NSString *)description
+{
+    return [NSString stringWithFormat:@"ID: %@, ------- title : %@", self.title, self.articleId];
+}
+
 @end

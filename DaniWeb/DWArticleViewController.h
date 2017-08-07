@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface DWArticleViewController : UIViewController
-@property (strong, nonatomic) IBOutlet UITextView *textArticleView;
+
 @property (strong, nonatomic) NSString* textContent;
+
+-(void) loadViewForPost:(int) postId;
+
 @end

@@ -6,19 +6,22 @@
 //  Copyright (c) 2014 DaniWeb. All rights reserved.
 //
 
+#import <RestKit/RestKit.h>
 #import "DWMenuViewController.h"
 #import "DWInitialViewController.h"
 #import "DWNavigationViewController.h"
 #import "DWMenuView.h"
 #import "DWMenuItem.h"
-#import "DWDealer.h"
+#import "DWForum.h"
 #import "UIColor+ColourTheme.h"
+#import "Async.h"
 
 @interface DWMenuViewController ()
 {
     NSMutableArray * menuStack;
     DWMenuView * tableMainMenu;
 }
+@property (nonatomic, retain) NSArray * allForums;
 
 @end
 
@@ -29,7 +32,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.dealer = [[DWDealer alloc] init];
+    
+    StartBlock();
+    
+    [[RKObjectManager sharedManager] getObjectsAtPathForRouteNamed:@"forums"
+                                                            object:nil
+                                                        parameters:nil
+                                                           success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult){
+                                                               self.allForums = mappingResult.dictionary[@"data"];
+                                                               EndBlock();
+                                                           }
+                                                           failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                                               NSLog(@"error happened %@", error);
+                                                               EndBlock();
+                                                           }];
+    
+    WaitUntilBlockCompletes();
     
     // Initialize the menu stack to add / dismiss submenus
     menuStack =     [[NSMutableArray alloc] init];
@@ -43,31 +61,23 @@
     
     tableMainMenu = [[DWMenuView alloc] initWithFrame:frame];
     [tableMainMenu setDelegate:self];
-    [menuStack addObject:tableMainMenu];
+    [menuStack addObject:@{@"menuView": tableMainMenu,
+                           @"forums":self.allForums}];
+    
     [self.entireContiner addSubview:tableMainMenu];
     [tableMainMenu setDataSource:self];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshMainMenu:) name:@"com.sixface.DaniWeb.mainMenuLoaded" object:nil];
 }
 
 -(void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"com.sixface.DaniWeb.mainMenuLoaded" object:nil];
 }
 
 #pragma mark -
 #pragma mark Main Menu Helpers
 
 
--(void) refreshMainMenu: (NSNotification *) notif
-{
-    //reload the datasource in all menu in menu stack
-    for (DWMenuView * menu in menuStack) {
-        NSLog(@"reloading the data for menu - %d", [menu tag]);
-        [menu reloadData];
-    }
-}
 
 -(void)resetCellColours: (UITableView *) tableview
 {
@@ -81,7 +91,9 @@
 
 -(void) deleteTopTableAndMask: (id)sender
 {
-    UITableView * topview = [menuStack lastObject];
+    NSDictionary * topItemInMenuStack =[menuStack lastObject];
+    UITableView * topview = topItemInMenuStack [@"menuView"];
+    
     [UIView animateWithDuration:0.35
                           delay:0.0
                         options:UIViewAnimationOptionCurveEaseIn
@@ -93,21 +105,32 @@
                          
                          topview.frame = newRect;}
                      completion:^(BOOL completed){
-                         [menuStack removeObject:topview];
+                         [menuStack removeObject:topItemInMenuStack];
                          [topview removeFromSuperview];
                          [[(UITapGestureRecognizer * )sender view] removeFromSuperview];
                      }];
     
 }
+
+
 -(void) openSubmenu: (id) sender
 {
     // Get the tag from the touched cell
     
     NSInteger parentId = [[sender view] tag];
+    DWForum * parentForum ;
+    
+    for (DWForum * forum in [menuStack lastObject][@"forums"]) {
+        if ([forum.forumId intValue] == parentId) {
+            parentForum = forum;
+            break;
+        }
+    }
     
     // the top most row must be the last object in the stack. Reset the
     // colours of the selected cells and select the touched cell.
-    DWMenuView * topMostTable = [menuStack lastObject];
+    
+    DWMenuView * topMostTable = [menuStack lastObject][@"menuView"];
     [self resetCellColours:topMostTable];
     
     CGRect markins = CGRectMake(320,
@@ -115,15 +138,20 @@
                                 tableMainMenu.bounds.size.width - 50 - ([menuStack count] -1)*10,
                                 topMostTable.bounds.size.height);
     
+    // Create the new table view
     DWMenuView * newTableView = [[DWMenuView alloc] initWithFrame:markins];
+    
+    // Update the new menu view and the children forums in the menu stack
+    [menuStack addObject:@{@"menuView": newTableView,
+                           @"forums": parentForum.children}];
+    
+    
     [newTableView setTag:parentId];
     [newTableView setDataSource:self];
     [newTableView setDelegate:self ];
     [self.entireContiner addSubview:newTableView];
     
-    [menuStack addObject:newTableView];
-    
-    
+    // Create the masking layer
     UIView *masklayer = [[UIView alloc]initWithFrame:tableMainMenu.frame];
     [masklayer setBackgroundColor:[[UIColor blackColor] colorWithAlphaComponent:0.25]];
     [masklayer addGestureRecognizer:[[UITapGestureRecognizer alloc]
@@ -162,7 +190,7 @@
     [self.stuffController  openMenuForItem:@{@"id":[NSString stringWithFormat:@"%d", [selectedCell tag]],
                                              @"title": selectedCell.textLabel.text
                                              }];
-
+    
 }
 
 #pragma mark -
@@ -172,43 +200,39 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // find the item for the cell from the Json dictionary.
-//    NSNumber * parentId = [NSNumber numberWithInteger:[tableView tag ]];
-    NSArray * children = [self.dealer getSubMenuForItemID:[tableView tag ]];
-    NSDictionary * itemForCell = children[[indexPath row]];
-
+    
+    NSArray * children = [menuStack lastObject][@"forums"];
+    DWForum * forumItem = children[[indexPath row]];
+    
     // Create the cell and return
     DWMenuItem * cell = [[DWMenuItem alloc] init];
-        if (itemForCell[@"relatives"][@"children"])
-        {
-            CGRect accessoryViewFrame = CGRectMake(cell.bounds.origin.x +(cell.bounds.size.width -80),
-                                                   cell.bounds.origin.y,
-                                                   40,
-                                                   cell.bounds.size.height-20);
-            
-            UIView * accessoryView = [[UIView alloc] initWithFrame:accessoryViewFrame];
-            UIImageView * arrowView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow.png"]];
-            CGRect arrowFrame = CGRectMake(10, 2, 20, 20);
-            arrowView.frame = arrowFrame;
-            [accessoryView addSubview:arrowView];
-            accessoryView.frame = accessoryViewFrame;
-            cell.accessoryView = accessoryView;
-            UITapGestureRecognizer * tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openSubmenu:)];
-            tapper.numberOfTapsRequired =1;
-            [accessoryView setTag:[itemForCell [@"id"] integerValue]];
-            [accessoryView addGestureRecognizer:tapper];
-        }
-    [[cell textLabel] setText:itemForCell[@"title"]];
-    [cell setTag:[itemForCell[@"id"] integerValue]];
+    if (forumItem.children)
+    {
+        CGRect accessoryViewFrame = CGRectMake(cell.bounds.origin.x +(cell.bounds.size.width -80),
+                                               cell.bounds.origin.y,
+                                               40,
+                                               cell.bounds.size.height-20);
+        
+        UIView * accessoryView = [[UIView alloc] initWithFrame:accessoryViewFrame];
+        UIImageView * arrowView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow.png"]];
+        CGRect arrowFrame = CGRectMake(10, 2, 20, 20);
+        arrowView.frame = arrowFrame;
+        [accessoryView addSubview:arrowView];
+        accessoryView.frame = accessoryViewFrame;
+        cell.accessoryView = accessoryView;
+        UITapGestureRecognizer * tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openSubmenu:)];
+        tapper.numberOfTapsRequired =1;
+        [accessoryView setTag:[forumItem.forumId intValue] ];
+        [accessoryView addGestureRecognizer:tapper];
+    }
+    [[cell textLabel] setText:forumItem.title];
+    [cell setTag:[forumItem.forumId intValue]];
     return cell;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    int count = 0;
-    
-    NSArray * menuItems = [self.dealer getSubMenuForItemID:tableView.tag];
-    count = [menuItems count];
-    return count;
+    return [[menuStack lastObject][@"forums"] count];
 }
 
 @end

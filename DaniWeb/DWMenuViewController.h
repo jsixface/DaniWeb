@@ -14,7 +14,7 @@
 
 @property (strong, nonatomic) IBOutlet UIView *parentView;
 @property (strong, nonatomic) IBOutlet UIView *entireContiner;
-@property (strong, nonatomic) DWDealer * dealer;
+
 
 @property DWNavigationViewController * stuffController;
 @end

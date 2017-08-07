@@ -7,12 +7,15 @@
 //
 
 #import "DWAppDelegate.h"
+#import "DWConfigurator.h"
 
 @implementation DWAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    [DWConfigurator config];
 
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:YES];
     return YES;

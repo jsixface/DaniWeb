@@ -10,4 +10,16 @@
 
 @interface DWArticle : NSObject
 
+@property(nonatomic, retain) NSString * title;
+@property(nonatomic, retain) NSNumber * upvotes;
+@property(nonatomic, retain) NSString * uri;
+@property(nonatomic, retain) NSNumber * articleId;
+@property(nonatomic, retain) NSNumber * repliesCount;
+@property(nonatomic, retain) NSNumber * viewsCount;
+@property(nonatomic, retain) NSString * type;
+@property(nonatomic, retain) NSArray * related;
+@property(nonatomic, retain) NSArray * posters;
+
+
+
 @end

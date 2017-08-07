@@ -11,7 +11,9 @@
 #import "DWNavigationViewController.h"
 #import "DWContentCellView.h"
 #import "DWLoadingView.h"
-#import "DWDealer.h"
+
+#import <RestKit/RestKit.h>
+#import "DWForum.h"
 
 #define CELL_HEIGHT 80.0
 
@@ -21,7 +23,7 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *postsTable;
 @property (strong, nonatomic) NSArray * totalPosts;
-@property (strong, nonatomic) DWDealer * dealer;
+
 @end
 
 @implementation DWContentViewController
@@ -33,7 +35,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
     self.view.layer.shadowOffset = CGSizeZero;
     self.view.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.view.bounds].CGPath;
     self.view.layer.shadowOpacity = 0.75f;
@@ -49,47 +51,34 @@
         [self.postsTable deselectRowAtIndexPath:selectedIndex animated:animated];
 }
 
--(DWDealer *)dealer
-{
-    if(!_dealer)
-    {
-        _dealer = [[DWDealer alloc] init];
-    }
-    return _dealer;
-}
 
 -(void)openMenuForItem:(NSDictionary *)menuitem
 {
     // set the title
     self.title =menuitem[@"title"];
     
-    
     // show the loading view
-    CGRect loadingFrame = self.postsTable.frame;
-    DWLoadingView * loadingView = [[DWLoadingView alloc] initWithFrame:loadingFrame];
-    loadingView.tag= 99;
-    [self.view addSubview:loadingView];
+    [self.view addSubview:[[DWLoadingView alloc] initWithFrame:self.postsTable.frame]];
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-        
-        // get the data from the dealer
-        // set the data to data holder
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            self.totalPosts = [self.dealer getContentForForumID:menuitem[@"id"]];
-            [self.postsTable reloadData];
-            [self.postsTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]
-                                   atScrollPosition:UITableViewScrollPositionTop
-                                           animated:NO];
-            // remove the loading view
-            NSArray *subviews = self.view.subviews;
-            for (UIView * subview in subviews) {
-                if (subview.tag == 99) {
-                    [subview removeFromSuperview];
-                    break;
-                }
-            }
-        });
-    });
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+//        dispatch_sync(dispatch_get_main_queue(), ^{
+//            // get the data from the dealer
+//            // set the data to data holder
+//            self.totalPosts = [self.dealer getContentForForumID:menuitem[@"id"]];            
+//            [self.postsTable reloadData];
+//            [self.postsTable scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]
+//                                   atScrollPosition:UITableViewScrollPositionTop
+//                                           animated:NO];
+//            // remove the loading view
+//            NSArray *subviews = self.view.subviews;
+//            for (UIView * subview in subviews) {
+//                if (subview.tag == DW_LOADING_TAG) {
+//                    [subview removeFromSuperview];
+//                    break;
+//                }
+//            }
+//        });
+//    });
 }
 
 
@@ -105,9 +94,9 @@
     {
         DWArticleViewController* destination = [segue destinationViewController];
         DWContentCellView * selectedPostCell = (DWContentCellView*)sender;
-        destination.textContent = selectedPostCell.titleText;
-         NSLog(@"%@", selectedPostCell.textLabel.text);
-        
+        destination.title = selectedPostCell.titleText;
+        [destination.view addSubview:[[DWLoadingView alloc] initWithFrame:destination.view.frame]];
+        [destination loadViewForPost:selectedPostCell.tag];
     }
 }
 
@@ -129,7 +118,7 @@
     cell.timestamp = self.totalPosts[[indexPath row]][@"last_post"][@"timestamp"];
     NSString* tag = self.totalPosts[[indexPath row]][@"id"];
     cell.tag  =[tag integerValue];
-
+    
     return cell;
 }
 
@@ -138,7 +127,7 @@
     NSString * title = self.totalPosts[[indexPath row]][@"title"];
     UIFont * titleFont  =    [UIFont fontWithName:@"Helvetica" size:16.0];
     CGSize size = [title sizeWithAttributes:@{NSFontAttributeName: titleFont}];
-
+    
     if (size.width < 288)
         return CELL_HEIGHT - titleFont.lineHeight;
     else

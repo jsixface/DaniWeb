@@ -7,6 +7,10 @@
 //
 
 #import <XCTest/XCTest.h>
+#import <Restkit/Restkit.h>
+#import "DWForum.h"
+#import "DWConfigurator.h"
+#import "Async.h"
 
 @interface DaniWebTests : XCTestCase
 
@@ -18,6 +22,7 @@
 {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    [DWConfigurator config];
 }
 
 - (void)tearDown
@@ -28,7 +33,23 @@
 
 - (void)testExample
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    //test start
+    
+    StartBlock();
+    
+    [[RKObjectManager sharedManager] getObjectsAtPathForRouteNamed:@"forums"
+                                                            object:nil
+                                                        parameters:nil
+                                                           success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                                               NSLog(@"%@", mappingResult.dictionary[@"data"]);
+                                                               EndBlock();
+                                                           }
+                                                           failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                                               NSLog(@"error happened %@", error);
+                                                               EndBlock();
+                                                           }];
+
+    WaitUntilBlockCompletes();
 }
 
 @end

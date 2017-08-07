@@ -7,8 +7,10 @@
 //
 
 #ifndef DaniWeb_DWDeclaredConstants_h
-#define DaniWeb_DWDeclaredConstants_h
+    #define DaniWeb_DWDeclaredConstants_h
 
-#define DW_CONTENT_SLIDE_PERCENT 0.85
+    #define DW_CONTENT_SLIDE_PERCENT 0.85
+
+    #define DW_LOADING_TAG -99
 
 #endif
